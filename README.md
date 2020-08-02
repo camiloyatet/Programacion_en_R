@@ -4,4 +4,4 @@ Este curso se centra en el conocimiento de la herramienta R, analizando sus apli
 
 | Sesión | Tema          | Subtemas    |
 |--------|---------------|-------------|
-| 1      | Presentación del Curso e Introducción | <ul><li> Socialización del Contenido Programático </li><li> Acuerdos </li> <li> Apiaciones de R </li></ul> |
+| 1      | Presentación del Curso e Introducción | <ul><li> Socialización del Contenido Programático </li><li> Acuerdos </li> <li> Aplicaciones de R </li></ul> |
