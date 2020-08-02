@@ -9,3 +9,5 @@ Este curso se centra en el conocimiento de la herramienta R, analizando sus apli
 
 ## Recursos
 * [Repositorio comprehensivo de R ](https://cran.r-project.org/)
+* [R Studio](https://rstudio.com/)
+* [Canal de Slack](https://join.slack.com/t/usaprogramacionr/shared_invite/zt-glkubzps-ySLPEP0r0jPNVHekUH92Xg)
