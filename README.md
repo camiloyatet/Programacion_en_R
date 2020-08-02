@@ -4,4 +4,4 @@ Este curso se centra en el conocimiento de la herramienta R, analizando sus apli
 
 | Sesion | Tema          | Subtemas    |
 |--------|---------------|-------------|
-| 1      | Introducción  | <ul><li>item1</li><li>item2</li></ul> |
+| 1      | [Presentación del Curso e Introducción](https://www.spanishged365.com/funciones-del-teclado-ingles-para-escribir-con-acentos/)  | <ul><li> Socialización del Contenido Programático </li><li> Acuerdos </li> <li> Apiaciones de R </li></ul> |
