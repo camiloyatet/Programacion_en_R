@@ -6,6 +6,7 @@ Este curso se centra en el conocimiento de la herramienta R, analizando sus apli
 | Sesión | Tema          | Subtemas    |
 |--------|---------------|-------------|
 | 1      | [Presentación del Curso e Introducción](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion1/Introduccion.pdf) | <ul><li> Socialización del Contenido Programático </li><li> Acuerdos </li> <li> Aplicaciones de R </li></ul> |
+|2| Elementos Basicos de Programacion|<ul><li> [Software R](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%202/Lenguaje_R.html) </li><li> [Tipos de Objetos](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%202/Tipos_de_Variables.html) </li> <li> [Estructuras de Control](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%202/Estructuras_de_Control.html) </li></ul> |
 
 ## Recursos
 * [Repositorio comprehensivo de R ](https://cran.r-project.org/)
