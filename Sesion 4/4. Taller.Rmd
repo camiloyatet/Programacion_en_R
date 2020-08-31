@@ -1,0 +1,25 @@
+---
+title: Visualización de la información
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_notebook: 
+    toc: true
+    toc_float: true 
+---
+
+![](logo.png)
+
+### Reto de Visualización
+
+Para la base de datos __mtcars__ cargada en R, la cual tiene las siguientes variables
+
+```{r }
+?mtcars
+```
+
+
+```{r}
+glimpse(mtcars)
+```
+
+Realice los diagramas o gráficas que considere pertinentes para hacer una descripción general de los datos de la base
