@@ -33,7 +33,7 @@ hist(iris$Sepal.Length, col = "lightsalmon1", main = "Histograma")
 La función `png()` nos permite grabar una imagen en el disco. Lleva como argumento principal la ruta completa a donde se desea guardar la misma, incluyendo el nombre que queremos dar al archivo. A su vez pueden especificarse otros argumentos como el ancho y largo de la imagen, entre otros.  
 
 ```{r}
-ruta_archivo <- "Sesion 3/resultados/grafico1.PNG"
+ruta_archivo <- "resultados/grafico1.PNG"
 ruta_archivo
 png(ruta_archivo)
 plot(iris$Sepal.Length,type = "b")
