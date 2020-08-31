@@ -1,0 +1,201 @@
+---
+title: "Programacion Funcional"
+output:
+  html_notebook:
+    toc: yes
+    toc_float: yes
+  html_document:
+    df_print: paged
+    toc: yes
+date: "`r format(Sys.time(), '%d %B %Y')`"
+---
+
+![](logo.png)
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+### Loops
+
+Un __loop__ es una estructura de código que permite aplicar iterativamente un mismo conjunto de comandos, variando el valor de una variable. Por ejemplo:
+
+```{r,warning=FALSE}
+for(i in 1:10){
+   print(i^2)
+}
+```
+
+Esto se lee como : "Recorrer cada uno de los valores (i) del vector numérico 1 a 10, y para cada uno de ellos imprimir el numéro elevado al cuadrado (i^2)".
+
+```{r}
+for(Valores in 1:10){
+   print(Valores^2)
+  
+}
+```
+
+Un loop puede iterar sobre cualquier tipo de vector.
+
+> Los loops son una estructura básica que existen en cualquier lenguaje de programación. En R se recomienda no abusar de ellos porque hacen que el código sea más lento.
+
+
+### Estructuras Condicionales
+
+Las __estructuras condiconales__ permiten ejecutar una porción de código en caso de que cumplan una condición lógica
+
+#### if
+Su funcionamiento es:     
+```if(condicion){instrucciones si se cumple la condición}```
+
+
+```{r,warning=FALSE}
+if( 2+2 == 4){
+  print("Correcto")
+}
+
+```
+
+```{r,warning=FALSE}
+if( 2+2 == 5){
+  print("Incorrecto")
+}
+
+```
+
+
+#### ifelse
+La función ```if_else()``` sirve para crear o modificar dicotómicamente un objeto a partir del cumplimiento de una o más condiciones lógicas.  
+Su funcionamiento es el siguiente:      
+```if_else(condicion,instrucciones si es verdadero,instrucciones si es falso)```
+
+```{r}
+if_else(2+2==4, true = "Correcto",false = "Error")
+```
+
+### Funciones
+
+La creación de __funciones__ propias nos permite automatizar todas aquellas partes del código que se repiten mucho. Una vez diseñadas, funcionan igual que cualquier comando. 
+
+Por ejemplo, podemos definir la suma de dos elementos como
+
+
+```{r}
+suma <- function(valor1, valor2) {
+  valor1+valor2
+}
+
+suma(5,6)
+```
+
+
+Obviamente las funciones no son sólo para variables numéricas. Por ejemplo, podemos pegar dos cadenas con un separador en  medio
+
+```{r}
+funcion_prueba <- function(parametro1,parametro2) {
+  paste(parametro1, parametro2, sep = " <--> ")
+}
+
+funcion_prueba(parametro1 = "Cadena 1", parametro2 = "Cadena 2")
+
+```
+
+También podemos asignar un valor por defecto para los parametros en caso de que el usuario especifique un valor.
+
+```{r}
+Otra_funcion_prueba <- function(parametro1 ,parametro2 = "Cadena por Defecto") {
+  paste(parametro1, parametro2, sep = " <--> ")
+  
+}
+Otra_funcion_prueba(parametro1 = "Valor 1 ")
+
+```
+
+Las funciones que creamos nosotros permanecen en el ambiente de R temporlamente. Cuando removemos los objetos del ambiente, la función deja de existir. Por ende, debemos incorporarla en cada uno de los scripts en la cual la necesitemos. Una buena práctica, es incorporar nuestras funciones útiles al comienzo de cada script junto a la carga de las librerías.                         
+
+Vale mencionar que __lo que ocurre en una función, queda en la función__ excepto que explícitamente pidamos que devuelva el resultado, con el comando `print()`. 
+
+Las funciones siempre devuelven el último objeto que se crea en ellas, o si explicitamente se utiliza el comando `return()`
+
+
+### PURRR^[basado en https://jennybc.github.io/purrr-tutorial/ls03_map-function-syntax.html]
+
+MAP es la forma _tidy_ de hacer loops. Además de ser más legible el código, es mucho más eficiente.
+
+La función __map__ toma un input, una función para aplicar, y alguna otra cosa (por ejemplo parametros que necesite la función)
+
+- map(.x, .f, ...)
+- map(VECTOR_O_LIST_INPUT, FUNCTION_A_APLICAR, OTROS_OPCIONALES)
+
+
+Usamos __map2__ cuando tenemos que pasar dos input, que se aplican sobre una función:
+
+- map2(.x, .y, .f, ...)
+- map2(INPUT_UNO, INPUT_DOS, FUNCTION_A_APLICAR, OTROS_OPCIONALES)
+
+Si tenemos más de dos...
+
+- pmap(.l, .f, ...)
+- pmap(VECTOR_O_LIST_INPUT, FUNCTION_A_APLICAR, OTROS_OPCIONALES)
+
+
+Por ejemplo. Si queremos utilizar la función prueba sobre los datos del dataframe
+
+
+```{r}
+ABC_123 <- data.frame(Letras = LETTERS[1:20],Num = 1:20)
+funcion_prueba
+```
+
+Si el resultado que queremos es que junte cada fila, necesitamos pasarle dos parámetros: utilizamos `map2()`
+
+
+```{r}
+resultado <- map2(ABC_123$Letras,ABC_123$Num,funcion_prueba)
+resultado[1:3]
+
+```
+
+La salida de los `map()` es una __lista__, no un vector, por lo que si lo metemos dentro de un dataframe se vería así:
+
+```{r}
+ABC_123 %>% 
+  mutate(resultado= map2(Letras,Num,funcion_prueba))
+```
+
+al ponerlo dentro del dataframe desarma la lista y guarda cada elemento por separado.
+Lo interesante de esta foram de trabajo esque es posible __guardar cualquier cosa en el dataframe__ no sólo valores, sino también listas, funciones, dataframes, etc.
+
+Si se quiere recuperar los valores originales en este caso se usa `unlist()`
+
+
+```{r}
+
+resultado[1:3] %>% unlist()
+
+ABC_123 %>% 
+  mutate(resultado= unlist(map2(Letras,Num,funcion_prueba)))
+
+```
+
+
+###  Funciones implícitas 
+
+No es necesario que se defina la función de antemano. Se puede usar _funciones implícitas_
+
+```{r}
+map_dbl(c(1:10), function(x) x^2)
+map2_dbl(c(1:10),c(11:20), function(x,y) x*y)
+
+```
+
+### Funciones lambda
+
+Incluso más conciso que las funciones implíictas son las __funciones lambda__ donde se definen las variables como _.x_ _.y_, etc. La flexibilidad de estas expresiones es limitada, pero puede ser útil en algunos casos. 
+
+```{r}
+
+map_dbl(c(1:10),~.x^2)
+map2_dbl(c(1:10),c(11:20),~.x*.y)
+
+```
