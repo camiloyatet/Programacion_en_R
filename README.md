@@ -10,7 +10,7 @@ Este curso se centra en el conocimiento de la herramienta R, analizando sus apli
 |3|<ul><li> [Introduccion a la Lectura de Datos](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%203/Lectura-de-Archivos-Locales.html) </li><li> [Manipulacion de Datos](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%203/Manipulaci%C3%B3n-de-Datos.html) </li></ul>||[Taller2](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%203/Taller%20Manipulacion%20de%20Datos.R)|
 |4|<ul><li> [Resumen Tidyverse](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%204/1.%20Notebook%20Tidyverse.Rmd) </li><li> [Programacion Funcional](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%204/2.%20Programacion%20Funcional.Rmd) </li> <li>[Visualizacion de Datos](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%204/3.%20Visualizacion%20de%20Datos.Rmd)</li> </ul>||[Taller3](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%204/4.%20Taller.Rmd)|
 |5|<ul><li> [Markdowns](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%205/Markdown.Rmd) </li><li> [Probabilidad y Estadística](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%205/Probabilidad%20y%20Estadistica.Rmd) </li> </ul>||
-
+|5|<ul><li> [Regresion](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%206/Regresion%20lineal.nb.html) </li><li> [Data Science](https://github.com/camiloyatet/Programacion_en_R/blob/master/Sesion%206/Ciencia%20de%20Datos.nb.html) </li> </ul>||
 
 ## Recursos
 * [Repositorio comprehensivo de R ](https://cran.r-project.org/)
